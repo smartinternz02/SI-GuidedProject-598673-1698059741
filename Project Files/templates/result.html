@@ -1,0 +1,15 @@
+{% extends 'base.html' %} {% block head %}
+<title>Car Purchase Prediction</title>
+{% endblock %} {% block body %}
+<div class="resultDiv">
+  <div class="border-success border border-3 bg-light w-25 m-auto py-1">
+    <h1 class="text-center my-3">Result</h1>
+    <div class="text-center text-danger my-3">{{ resultText }}</div>
+    <div class="text-center my-5">
+      <form action="/">
+        <button type="submit" class="btn btn-primary">Go Back</button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

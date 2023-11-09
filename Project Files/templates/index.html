@@ -1,0 +1,68 @@
+{% extends 'base.html' %} {% block head %}
+<title>Car Purchase Prediction</title>
+{% endblock %} {% block body %}
+<div class="indexDiv">
+  <div class="border border-2 border-danger bg-light w-50 m-auto">
+    <div class="header">
+      <h1 class="text-center text-capitalize text-primary">
+        Car Purchase Prediction
+      </h1>
+    </div>
+    <div class="my-5">
+      <h3 class="text-center text-primary">
+        Enter the details of the customer to be predicted
+      </h3>
+    </div>
+    <form action="/" method="POST" id="customerForm">
+      <table class="formTable">
+        <tr>
+          <td>
+            <label for="gender">Enter the Customer's Gender</label>
+          </td>
+          <td>
+            <select id="gender" name="gender">
+              <option hidden selected>Select...</option>
+              <option value="0">Male</option>
+              <option value="1">Female</option>
+            </select>
+            <p class="text-danger" id="genderError">
+              *Select the Customer's gender
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><label for="age">Enter the Customer's Age</label></td>
+          <td>
+            <input id="age" name="age" type="number" />
+            <p class="text-danger" id="ageError">
+              *Enter a valid age above 18 and below 110
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="annualSal">Enter the Customer's Annual Salary</label>
+          </td>
+          <td>
+            <input id="annualSal" name="annualSal" type="number" />
+            <p class="text-danger" id="annualSalError">
+              *Enter an Annual Salary above 0
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" class="text-center">
+            <button
+              type="button"
+              onclick="formValidation()"
+              class="btn btn-primary"
+            >
+              Submit
+            </button>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </div>
+</div>
+{% endblock %}
